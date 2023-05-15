@@ -14,7 +14,7 @@ variables:
   JSONDATA: '{"Username":"$PORTAINERUSERNAME","Password":"$PORTAINERUSERNAMEPASSWORD"}'
   BEARERKEY: ""
   CONEXCIST: "none"
-  GITLABREPOURL: "https://gitlab.com/anonymous0230/opensourceecommerce"
+  GITLABREPOURL: "https://gitlab.com/anonymous0230/opensourceecommerce1"
   CI_DEBUG_TRACE: "true"
 
 before_script:
