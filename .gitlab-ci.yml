@@ -34,7 +34,6 @@ test-frontend:
     reports:
       junit:
         - junit.xml
-
   before_script:
     - cd src
     - npm install typescript --save-dev
