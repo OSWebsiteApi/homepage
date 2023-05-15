@@ -15,6 +15,7 @@ variables:
   BEARERKEY: ""
   CONEXCIST: "none"
   GITLABREPOURL: "https://gitlab.com/anonymous0230/opensourceecommerce"
+  CI_DEBUG_TRACE: "true"
 
 before_script:
   - |
