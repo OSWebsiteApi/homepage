@@ -28,7 +28,7 @@ test-frontend:
     - npm run test
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
   before_script:
-    - cd app/frontend
+    - cd src
     - npm install typescript --save-dev
     - npm install
 
