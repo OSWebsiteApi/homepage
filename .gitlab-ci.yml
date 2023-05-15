@@ -28,6 +28,7 @@ test-frontend:
     - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
   artifacts:
+    name: "coverage"
     paths:
       - coverage/
     when: always
