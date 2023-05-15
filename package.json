@@ -48,13 +48,23 @@
     ]
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/cron": "^2.0.1",
     "@types/dotenv": "^8.2.0",
     "@types/moment": "^2.13.0",
     "@types/react-dom": "^18.2.3",
     "jest-junit": "^16.0.0",
     "react-test-renderer": "^18.2.0",
-    "typescript": "^5.0.4",
-    "@types/axios": "^0.14.0"
+    "typescript": "^5.0.4"
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "outputDirectory": ".",
+    "outputName": "junit.xml",
+    "uniqueOutputName": "false",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
   }
 }
