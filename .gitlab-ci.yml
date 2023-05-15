@@ -25,8 +25,16 @@ test-frontend:
   stage: test
   image: npm:latest
   script:
-    - npm run test
+    - npm run test:ci
   coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - coverage/
+    when: always
+    reports:
+      junit:
+        - junit.xml
+
   before_script:
     - cd src
     - npm install typescript --save-dev
