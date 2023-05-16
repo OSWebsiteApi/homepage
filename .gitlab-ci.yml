@@ -25,21 +25,26 @@ before_script:
 test-frontend:
   stage: test
   image: npm:latest
-  script:
-    - npm run test:ci
-  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
-  artifacts:
-    name: "coverage"
-    paths:
-      - coverage/
-    when: always
-    reports:
-      junit:
-        - junit.xml
   before_script:
     - cd src
     - npm install typescript --save-dev
     - npm install
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  script:
+  - if [ -f "./test/*.tsx" ] || [ -f "./test/*.ts" ]; then npm run test:ci; fi
+  cache:
+    paths: 
+      - coverage/
+  artifacts:
+      paths: 
+        - coverage/
+      when: always
+      reports:
+        junit:
+          - junit.xml
+        coverage_report:
+          coverage_format: cobertura
+          path: coverage/cobertura-coverage.xml
 
 update_version_tag:
   stage: build
@@ -110,6 +115,9 @@ deploy_deployment:
   image: docker:latest
   services:
     - docker:dind
+  artifacts:
+    paths:
+      - public
   environment:
     name: deployment
     url: "$LOCALIP14004"
@@ -123,6 +131,9 @@ deploy_deployment:
     JSONDATAEXEC3: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["cd","src"]}'
     JSONDATAEXEC4: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["Serve", "-s build -l 8444"]}'
   script:
+    - mkdir .public
+    - cp -r coverage/* .public
+    - mv .public public
     - |
       CONEXCIST=$(curl -X GET "$PORTAINERURL/api/endpoints/2/docker/containers/json?all=1" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" -H "$ACCEPT" | jq -r 'if length > 0 then .[] | select(.Names[0] == "/deploymentWebsite") | .Id else "null" end')
     - |
