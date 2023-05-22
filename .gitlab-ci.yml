@@ -74,7 +74,7 @@ update_version_tag:
       echo "Skipping version tag update for branch $CI_COMMIT_BRANCH"
       fi
 
-deploy_staging:
+deploy_staging_docker:
   stage: deploy
   image: docker:latest
   services:
@@ -110,7 +110,7 @@ deploy_staging:
     - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'staging' && $CI_PIPELINE_SOURCE == 'merge_request_event'
   when: on_success
 
-deploy_deployment:
+deploy_deployment_docker:
   stage: deploy
   image: docker:latest
   services:
