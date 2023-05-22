@@ -11,8 +11,6 @@ import { CronJob } from 'cron';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const dir = process.cwd();  
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -37,25 +35,25 @@ async function sendDataToGrafana(data: any) {
 // Check if SSL is enabled for the frontend app
 if (process.env.FRONTEND_SSL_ENABLED == "true") {
   // Create the directory for the SSL certificates if it doesn't exist
-  const certDir = path.dirname(process.env.FRONTEND_SSL_PATH);
+  const certDir = path.dirname(process.env.FRONTEND_SSL_PATH as string);
   if (!fs.existsSync(certDir)) {
     fs.mkdirSync(certDir, { recursive: true });
   }
 
   // Schedule the renewal of the SSL certificate using Certbot
-  const certbotJob = new CronJob(process.env.CERTBOT_RENEWAL_SCHEDULE, () => {
+  const certbotJob = new CronJob(process.env.CERTBOT_RENEWAL_SCHEDULE as string, () => {
     console.log('Renewing SSL certificate for frontend...');
     const certbotProcess = spawn('certbot', [
       'certonly',
       '--non-interactive',
       '--agree-tos',
       '--email',
-      process.env.CERTBOT_EMAIL,
+      process.env.CERTBOT_EMAIL as string,
       '--webroot',
       '-w',
-      process.env.CERTBOT_PASSWORD,
+      process.env.CERTBOT_PASSWORD as string,
       '-d',
-      process.env.FRONTEND_URL,
+      process.env.FRONTEND_URL as string,
     ]);
 
     certbotProcess.stdout.on('data', (data: { toString: () => any; }) => {
