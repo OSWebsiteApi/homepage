@@ -76,78 +76,22 @@ update_version_tag:
 
 deploy_staging:
   stage: deploy
-  image: docker:latest
-  services:
-    - docker:dind
   environment:
     name: staging
     url: "$LOCALIP14005"
-  variables:
-    PORTAINERRESPONSE: ""
-    JSONDATAPOST: '{"Image":"nginx:latest","ExposedPorts":{"80/tcp":{}},"HostConfig":{"PortBindings":{"80/tcp":[{"HostPort":"14005"}]}}}'
-    JSONBEARERKEY: '{"X-API-Key":"$BEARERKEY"}'
-    JSONAuthorization: '{"Authorization":"Bearer $BEARERKEY"}'
-    JSONDATAEXEC1: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["git", "clone", "$GITLABREPOURL"]}'
-    JSONDATAEXEC2: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["git","checkout","staging"]}'
-    JSONDATAEXEC3: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["cd","src"]}'
-    JSONDATAEXEC4: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["Serve", "-s build -l 8444"]}'
   script:
-    - |
-      CONEXCIST=$(curl -X GET "$PORTAINERURL/api/endpoints/2/docker/containers/json?all=1" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" -H "$ACCEPT" | jq -r 'if length > 0 then .[] | select(.Names[0] == "/stagingWebsite") | .Id else "null" end')
-    - |
-      if [ -z "$CONEXCIST" ]; then
-        PORTAINERRESPONSE=$(curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/create?name=stagingWebsite" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAPOST" | jq -r '.Id')
-        curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/start" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT"
-      else
-        PORTAINERRESPONSE=$CONEXCIST;
-      fi
-    - |
-      curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/exec" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAEXEC1"
-      curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/exec" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAEXEC2"
-      curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/exec" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAEXEC3"
-      curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/exec" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAEXEC4"
+    - echo "Api will be updateed in deployment"
   rules:
-    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'staging' && $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'deployment' && $CI_PIPELINE_SOURCE == 'merge_request_event'
   when: on_success
 
 deploy_deployment:
   stage: deploy
-  image: docker:latest
-  services:
-    - docker:dind
-  artifacts:
-    paths:
-      - public
   environment:
     name: deployment
     url: "$LOCALIP14004"
-  variables:
-    PORTAINERRESPONSE: ""
-    JSONDATAPOST: '{"Image":"nginx:latest","ExposedPorts":{"80/tcp":{}},"HostConfig":{"PortBindings":{"80/tcp":[{"HostPort":"14005"}]}}}'
-    JSONBEARERKEY: '{"X-API-Key":"$BEARERKEY"}'
-    JSONAuthorization: '{"Authorization":"Bearer $BEARERKEY"}'
-    JSONDATAEXEC1: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["git", "clone", "$GITLABREPOURL"]}'
-    JSONDATAEXEC2: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["git","checkout","deployment"]}'
-    JSONDATAEXEC3: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["cd","src"]}'
-    JSONDATAEXEC4: '{"AttachStdin":false,"AttachStdout":true,"AttachStderr":true,"Cmd":["Serve", "-s build -l 8444"]}'
   script:
-    - mkdir .public
-    - cp -r coverage/* .public
-    - mv .public public
-    - |
-      CONEXCIST=$(curl -X GET "$PORTAINERURL/api/endpoints/2/docker/containers/json?all=1" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" -H "$ACCEPT" | jq -r 'if length > 0 then .[] | select(.Names[0] == "/deploymentWebsite") | .Id else "null" end')
-    - |
-      if [ -z "$CONEXCIST" ]; then
-        PORTAINERRESPONSE=$(curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/create?name=deploymentWebsite" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAPOST" | jq -r '.Id')
-        curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/start" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT"
-      else
-        PORTAINERRESPONSE=$CONEXCIST;
-      fi
-    - |
-      curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/exec" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAEXEC1"
-      curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/exec" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAEXEC2"
-      curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/exec" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAEXEC3"
-      curl -X POST "$PORTAINERURL/api/endpoints/2/docker/containers/$PORTAINERRESPONSE/exec" -H "Authorization":"Bearer $BEARERKEY" -H "$CONTENT" --data "$JSONDATAEXEC4"
+    - echo "Api will be updateed in deployment"
   rules:
     - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'deployment' && $CI_PIPELINE_SOURCE == 'merge_request_event'
   when: on_success
