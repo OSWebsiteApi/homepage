@@ -1,21 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 import dotenv from 'dotenv';
-import {BrowserRouter} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+//page routes
+import Home from './pages/Home/Home';
+import Layout from './pages/Layout/Layout';
+import Login from './pages/Login/Login';
+import Settings from './pages/Settings/Settings';
+import NoPage from './pages/NoPage/noPage';
+
+
 dotenv.config();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-root.render(
+
+export default function App() {
+  return (
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route>
+          <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
+  );
+}
+
+root.render(
+  <App />
 );
 
 async function sendDataToGrafana(data: any) {
