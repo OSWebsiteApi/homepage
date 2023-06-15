@@ -27,3 +27,5 @@ package-lock.json
 /.idea/modules.xml
 /.idea/vcs.xml
 /.idea
+src/.env
+docker-compose.yml
