@@ -10,7 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Layout from './pages/Layout/Layout';
 import Login from './pages/Login/Login';
-import Settings from './pages/Settings/Settings';
+import Settings from './pages/Settings/settings';
 import NoPage from './pages/NoPage/noPage';
 
 
