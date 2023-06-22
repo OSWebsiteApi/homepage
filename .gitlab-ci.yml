@@ -1,0 +1,97 @@
+image: docker:latest
+
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  NODE_ENV: production
+  REACT_APP_VERSION: $CI_COMMIT_TAG
+  REACT_APP_ENVIRONMENT: production
+  CONTENT: 'Content-Type: application/json'
+  ACCEPT: 'Accept: application/json'
+  JSONDATA: '{"Username":"$PORTAINERUSERNAME","Password":"$PORTAINERUSERNAMEPASSWORD"}'
+  BEARERKEY: ""
+  CONEXCIST: "none"
+  GITLABREPOURL: "https://gitlab.com/anonymous0230/opensourceecommerce1"
+  CI_DEBUG_TRACE: "true"
+
+before_script:
+  - |
+    BEARERKEY=$(curl -X POST "$PORTAINERURL/api/auth" --data "$JSONDATA" -H "$CONTENT" | jq -r '.jwt')
+  - export NODE_OPTIONS=--openssl-legacy-provider
+
+test-frontend:
+  stage: test
+  image: npm:latest
+  before_script:
+    - cd src
+    - npm install typescript --save-dev
+    - npm install
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  script:
+  - if [ -f "./test/*.tsx" ] || [ -f "./test/*.ts" ]; then npm run test:ci; fi
+  cache:
+    paths: 
+      - coverage/
+  artifacts:
+      paths: 
+        - coverage/
+      when: always
+      reports:
+        junit:
+          - junit.xml
+        coverage_report:
+          coverage_format: cobertura
+          path: coverage/cobertura-coverage.xml
+
+update_version_tag:
+  stage: build
+  script:
+    - |
+      if [ $CI_COMMIT_BRANCH != "main" ] && [ $CI_COMMIT_BRANCH != "staging" ] && [ $CI_COMMIT_BRANCH != "production" ]; then
+      current_tag=$(git describe --tags --abbrev=0)
+      if [ -z "$current_tag" ]; then
+        version_tag="v01.00.00"
+      else
+        version_tag=$current_tag
+      fi  
+      if [[ $CI_COMMIT_MESSAGE == feat* ]]; then
+        # Increment second decimal by 1
+        new_version_tag=$(echo $version_tag | awk -F'.' '{printf "v%02d.%02d.%01x", $1, $2+1, $3}')
+      elif [[ $CI_COMMIT_MESSAGE =~ (refactor|fix|build|style).* ]]; then
+        # Increment last digit by 1
+        new_version_tag=$(echo $version_tag | awk -F'.' '{printf "v%02d.%02d.%01x", $1, $2, $3+1}')
+      else
+        # No change to version tag
+        new_version_tag=$version_tag
+      fi
+      echo "Setting version tag to" $new_version_tag
+      git tag $new_version_tag
+      git push origin $new_version_tag
+      else  
+      echo "Skipping version tag update for branch $CI_COMMIT_BRANCH"
+      fi
+
+deploy_staging:
+  stage: deploy
+  environment:
+    name: staging
+    url: "$LOCALIP14005"
+  script:
+    - echo "Api will be updateed in deployment"
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'deployment' && $CI_PIPELINE_SOURCE == 'merge_request_event'
+  when: on_success
+
+deploy_deployment:
+  stage: deploy
+  environment:
+    name: deployment
+    url: "$LOCALIP14004"
+  script:
+    - echo "Api will be updateed in deployment"
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'deployment' && $CI_PIPELINE_SOURCE == 'merge_request_event'
+  when: on_success
