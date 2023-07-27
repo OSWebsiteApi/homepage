@@ -1,12 +1,12 @@
 import React from "react";
 
-import Layout from "../Layout/Layout";
+import Menu from "./menu";
 
 const NoPage = () => {
   return (
     <main>
       <h1>404</h1>
-      <Layout />
+      <Menu />
     </main>
   )
 };

@@ -1,12 +1,12 @@
-import NewButton from "../../components/NewButton";
+import NewButton from "../components/NewButton";
 import React from "react";
-import Layout from "../Layout/Layout";
+import Menu from "./menu";
 
 export default function Home() {
     return (
         <main>
             <h1>Home</h1>
-            <Layout />
+            <Menu />
             <NewButton />
         </main>
     )

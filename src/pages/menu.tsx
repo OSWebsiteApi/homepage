@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
-const Layout = () => {
+const Menu = () => {
     return (
         <>
             <nav>
@@ -24,4 +24,4 @@ const Layout = () => {
 };
 
 
-export default Layout;
+export default Menu;

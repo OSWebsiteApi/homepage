@@ -1,12 +1,12 @@
 import React from "react";
 
-import Layout from "../Layout/Layout";
+import Menu from "./menu";
 
 const Settings = () => {
     return (
         <main>
             <h1>Settings</h1>
-            <Layout />
+            <Menu />
         </main>
     )
 };

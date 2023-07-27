@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './css/styles.css';
 import reportWebVitals from './reportWebVitals';
 import dotenv from 'dotenv';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //page routes
-import Home from './pages/Home/Home';
-import Layout from './pages/Layout/Layout';
-import Login from './pages/Login/Login';
-import Settings from './pages/Settings/settings';
-import NoPage from './pages/NoPage/noPage';
-
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Settings from './pages/Settings';
+import NoPage from './pages/noPage';
 
 dotenv.config();
 
