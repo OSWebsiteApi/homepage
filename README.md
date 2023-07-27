@@ -1,21 +1,15 @@
 # OpenSourceEcommerce
 
-A project for managing you bisness and projects.
+A project for managing you businesses and projects.
 
 ## Test and Deploy
 
 ### Not Required
 Create a .env file in the Frontend folder. This has to include the Port number. (Otherwise the default port is 3000) 
-    ```
-    Port=3000
-    ```
-### Not Required
-Create a .env file in the scr folder. This has to include:
 
-    ```
-    WATCHDOG_GRAFANA_URL=
-    WATCHDOG_GRAFANA_API_KEY=
-    ```
+```
+ Port=3000
+```
 
 ## Name
 Open Source Ecommerce platform
@@ -23,20 +17,34 @@ Open Source Ecommerce platform
 ## Description
 The purpose of this project is to have a platform for businesses and projects. They can change all the code themselves and add code to get more functionality. They can request a merge to give this functionality to all the other users.
 
-## Visuals
-No Visuals yet
 
 ## Installation
-- build and run applicaiton 
-    'npm i'  to install all packages
-    'npm install serve' install serves that runs the program
-    'npm run build' makes a build from the project
-    'serve -s build' runs the application
-
+- Add or replace in Package.json ```"start": "react-scripts --openssl-legacy-provider start",```
+- Run for debug
+  - Run: ```npm i```  to install all packages
+  - npm run 
+- Copy and paste
+```
+    npm i
+    npm start
+```
+- Run for deployment
+     - Run: ```npm i```  to install all packages
+     - Run: ```npm install serve``` to install serves that runs the program
+     - Run: ```npm run build``` to make a build from the project
+     - Run: ```serve -s build``` to display the application
+- Copy and paste:
+  ```
+    npm i
+    npm install serve
+    npm install serve
+    npm run build
+    serve -s build``` 
+  
 ## Usage
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-The api is React so we need these commands to run the application.
+The api is React, so we need these commands to run the application.
 - run the application
     'npm start'
     Runs the app in the development mode.\
@@ -54,24 +62,22 @@ Todo:
 
 - Changelog
 For every update we make in the project we will add the Changelog. When we merge something make sure the Changelogs are correctly in order.
-The changelog needs to be formated:
-dd-mm-jjjj - {what did you d0 add/update/remove can be more then one}: message/explenation.
+The changelog needs to be formatted:
+dd-mm-jjjj - {what did you d0 add/update/remove can be more than one}: message/explanation.
 29-03-2023 - create: new project with all project file's and structure.
 
 ## Support
-Questions can be send to Sebastiaan@game-x.nl
+Questions can be sent to Sebastiaan@game-x.nl
 
 ## Roadmap
-- [ ] make config file
-- [ ] workout database layout
-- [ ] relase databese features
+To be concluded
 
 ## Contributing
 Everyone is welcome to contribute
 
 ## Authors and acknowledgment
-Thanks for conterbution to this project:
-Sebastiaan (Yes mezelf)
+Thanks for contribution to this project:
+Sebastiaan (Yes, myself)
 
 ## License
 This project is licensed under: GNU AFFERO GENERAL PUBLIC LICENSE
