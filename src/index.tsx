@@ -10,6 +10,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Settings from './pages/Settings';
 import NoPage from './pages/noPage';
+import Register from "./pages/Register";
+
 
 dotenv.config();
 
@@ -26,6 +28,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

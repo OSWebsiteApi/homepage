@@ -1,14 +1,20 @@
 import React from "react";
+import Header from "../Elements/Header";
+import {Footer} from "../Elements/Footer";
 
-import Menu from "./menu";
+import {Title1} from "../components/Titles";
+import '../css/styles.css';
 
 const NoPage = () => {
-  return (
-    <main>
-      <h1>404</h1>
-      <Menu />
-    </main>
-  )
+    return (
+        <>
+            <Header />
+                <main className={"index"}>
+                    <Title1 title={"404"} />
+                </main>
+            <Footer />
+        </>
+    )
 };
 
 export default NoPage;

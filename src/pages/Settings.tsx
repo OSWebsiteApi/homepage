@@ -1,13 +1,20 @@
 import React from "react";
+import Header from "../Elements/Header";
+import {Footer} from "../Elements/Footer";
 
-import Menu from "./menu";
+import {Title1} from "../components/Titles";
+
+import '../css/styles.css';
 
 const Settings = () => {
     return (
-        <main>
-            <h1>Settings</h1>
-            <Menu />
-        </main>
+        <>
+            <Header />
+                <main className={"index"}>
+                    <Title1 title={"Settings"} />
+                </main>
+            <Footer />
+        </>
     )
 };
 
