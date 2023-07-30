@@ -17,9 +17,9 @@ Open Source Ecommerce platform
 ## Description
 The purpose of this project is to have a platform for businesses and projects. They can change all the code themselves and add code to get more functionality. They can request a merge to give this functionality to all the other users.
 
-
 ## Installation
 - Add or replace in Package.json ```"start": "react-scripts --openssl-legacy-provider start",```
+- Create .env in src/ add ```APIURL={The ip to the api.}``` 
 - Run for debug
   - Run: ```npm i```  to install all packages
   - npm run 
