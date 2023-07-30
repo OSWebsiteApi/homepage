@@ -54,14 +54,30 @@ body {
 }
 
 /* ------- section for above navigation ------- */
+.header-section {
+  background-color: var(--nav-color);
+  height: 10vh;
+
+}
+
+.header-section > .header-section-total {
+  background-color: var(--nav-color);
+  height: inherit;
+  max-width: 1264px;
+  margin: auto;
+}
+
 .aboveNav {
   background-color: var(--background-color);
+  max-width: 1264px;
+  margin: auto;
 }
 
 .aboveNav > figure {
   margin: 0 auto;
   height: 100%;
   display: inline;
+
 }
 
 .aboveNav > .logoSmall > img {
@@ -79,17 +95,7 @@ body {
 /* ------- end of above navigation section ------- */
 
 /* ------- section for navigation ------- */
-.header-section {
-  background-color: var(--nav-color);
-  height: 10vh;
-  margin: 0 auto;
-}
 
-.header-section > .header-section-total {
-  background-color: var(--nav-color);
-  height: inherit;
-  margin: 0 auto;
-}
 
 .header-section > .header-section-total > .header-section-left {
   width: 19%;
@@ -152,8 +158,10 @@ body {
   list-style-type: none;
   overflow: hidden;
   margin: 0 5px;
-  float: left;
+  float: right;
+  width: inherit;
   border-radius: 10px;
+
 }
 
 .header-section > .header-section-total > .header-section-right > .navigation > .topnav > li > a {
@@ -162,6 +170,8 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  float: right;
+  background-color: var(--background-color);
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -171,10 +181,6 @@ body {
 
 .header-section > .header-section-total > .header-section-right > .navigation > .topnav > li.active > a {
   text-decoration: underline;
-}
-
-.header-section > .header-section-total > .header-section-right > .navigation > .topnav > li > a {
-  background-color: var(--background-color);
 }
 
 .header-section > .header-section-total > .header-section-right > .navigation > .topnav > li.active > a {
@@ -189,7 +195,12 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 1vh;
   min-height: 60vh;
-  margin: 0 auto;
+  max-width: 1264px;
+  margin: auto;
+}
+
+.index > .indexCenter {
+  margin: auto;
 }
 
 .index > header {
@@ -231,6 +242,8 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  max-width: 1264px;
+  margin: auto;
 }
 
 @media screen and (max-width: 1050px) {
