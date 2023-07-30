@@ -1,11 +1,10 @@
 import React from "react";
 import {useState} from "react";
-
-
+import {apiPostRequest} from "../Comminucations/API";
 
 export function LoginFrom() {
     const [inputs, setInputs] = useState({
-        email: undefined,
+        Email: undefined,
         Password: undefined
     });
 
@@ -17,17 +16,18 @@ export function LoginFrom() {
 
     const handleSubmit  = (event:any) => {
         event.preventDefault();
-        console.log(inputs)
+        apiPostRequest([inputs.Email, inputs.Password] ,"/login")
     }
 
     return (
+        <>
         <form onSubmit={handleSubmit}>
             <label> E-mail:
                 <br />
             <input
                 type="email"
-                name="emial"
-                value={inputs.email || ""}
+                name="Email"
+                value={inputs.Email}
                 onChange={handleChange}
             />
             </label>
@@ -37,13 +37,14 @@ export function LoginFrom() {
             <input
                 type="password"
                 name="Password"
-                value={inputs.Password || ""}
+                value={inputs.Password}
                 onChange={handleChange}
             />
             </label>
             <br/><br/>
             <input type="submit" />
         </form>
+        </>
     )
 }
 
@@ -54,7 +55,6 @@ export function RegisterForm() {
         email: undefined,
         Password: undefined,
         RPassword: undefined,
-
     });
 
     const handleChange = (event:any) => {
@@ -65,23 +65,24 @@ export function RegisterForm() {
 
     const handleSubmit  = (event:any) => {
         event.preventDefault();
-        console.log(inputs)
+        apiPostRequest([inputs.email, inputs.Password],"/register")
     }
 
     return (
+        <>
         <form onSubmit={handleSubmit}>
             <label>First name:
             <input
                 type="text"
                 name="fname"
-                value={inputs.fname || ""}
+                value={inputs.fname}
                 onChange={handleChange}
             /></label><br/>
             <label>Last name:
             <input
                 type="text"
                 name="lname"
-                value={inputs.lname || ""}
+                value={inputs.lname}
                 onChange={handleChange}
             />
             </label><br/>
@@ -89,7 +90,7 @@ export function RegisterForm() {
             <input
                 type="email"
                 name="email"
-                value={inputs.email || ""}
+                value={inputs.email}
                 onChange={handleChange}
             />
             </label><br/>
@@ -97,7 +98,7 @@ export function RegisterForm() {
             <input
                 type="password"
                 name="Password"
-                value={inputs.Password || ""}
+                value={inputs.Password}
                 onChange={handleChange}
             />
             </label><br/>
@@ -105,11 +106,12 @@ export function RegisterForm() {
             <input
                 type="password"
                 name="RPassword"
-                value={inputs.RPassword || ""}
+                value={inputs.RPassword}
                 onChange={handleChange}
             /></label><br/>
             <input type="submit"/>
         </form>
+        </>
     )
 }
 
