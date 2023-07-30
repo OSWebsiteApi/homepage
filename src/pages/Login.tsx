@@ -12,8 +12,11 @@ const Login = () => {
         <>
             <Header />
             <main className={"index"}>
-                <Title1 title={"Login"} />
-                <LoginFrom />
+                <div className="indexCenter">
+                    <Title1 title={"Login"} />
+                    <br/>
+                    <LoginFrom />
+                </div>
             </main>
             <Footer />
         </>

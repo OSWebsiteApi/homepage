@@ -44,6 +44,10 @@ export function LoginFrom() {
             <br/><br/>
             <input type="submit" />
         </form>
+        <div className="NotYetRegisterd">
+            <p>Not yet registerd:</p>
+            <a href="/Register">Register</a>
+        </div>
         </>
     )
 }
@@ -111,6 +115,10 @@ export function RegisterForm() {
             /></label><br/>
             <input type="submit"/>
         </form>
+            <div className="AlreadyRegisterd">
+                <p>Already register:</p>
+                <a href="/Login">Login</a>
+            </div>
         </>
     )
 }
