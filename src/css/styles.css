@@ -192,8 +192,6 @@ body {
 /* ------- section for main ------- */
 .index {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: 1vh;
   min-height: 60vh;
   max-width: 1264px;
   margin: auto;
@@ -229,6 +227,12 @@ body {
   margin: 0 auto;
   grid-column-start: 1;
   grid-column-end: 3;
+}
+
+.index > .indexCenter > .form {
+  margin: auto;
+  text-align: left;
+  align-content: center;
 }
 /* ------- end of main section ------- */
 
