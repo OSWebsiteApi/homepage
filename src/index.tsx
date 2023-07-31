@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './css/styles.css';
 import reportWebVitals from './reportWebVitals';
-import axios from 'axios';
 import dotenv from 'dotenv';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //page routes
-import Home from './pages/Home/Home';
-import Layout from './pages/Layout/Layout';
-import Login from './pages/Login/Login';
-import Settings from './pages/Settings/Settings';
-import NoPage from './pages/NoPage/noPage';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Settings from './pages/Settings';
+import NoPage from './pages/noPage';
+import Register from "./pages/Register";
 
 
 dotenv.config();
@@ -29,6 +28,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
@@ -39,19 +39,6 @@ export default function App() {
 root.render(
   <App />
 );
-
-async function sendDataToGrafana(data: any) {
-  try {
-    const response = await axios.post(
-      `${process.env.WATCHDOG_GRAFANA_URL}/api/datasources/proxy/1/api/v1/write?db=mydb&u=grafana&p=${process.env.WATCHDOG_GRAFANA_API_KEY}`,
-      data
-    );
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
