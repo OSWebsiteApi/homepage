@@ -4,6 +4,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 
 export async function apiLoginPostRequest(content: any, urlpath: string) {
     const urlPlusPath = process.env.API_URL || "stagingapi.game-x.nl" + urlpath
+
     const response = await fetch(urlPlusPath, {
         method: 'POST',
         body: JSON.stringify({
@@ -33,7 +34,7 @@ export async function apiRegisterPostRequest(content: any, urlpath: string) {
             lname: content.lname,
             fname: content.fname
         }),
-        headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+        headers: {'Content-Type': 'application/json; charset=UTF-8'}
     });
     if (!response.ok) { /* Handle */
     }
