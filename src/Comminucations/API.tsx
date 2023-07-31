@@ -19,7 +19,6 @@ export async function apiLoginPostRequest(content: any, urlpath: string) {
     if (response.body !== null) {
         // body is ReadableStream<Uint8Array>
         // parse as needed, e.g. reading directly, or
-        console.log(response.body)
         return response.body
     }
 }
@@ -42,7 +41,6 @@ export async function apiRegisterPostRequest(content: any, urlpath: string) {
     if (response.body !== null) {
         // body is ReadableStream<Uint8Array>
         // parse as needed, e.g. reading directly, or
-        console.log(response.body)
         return response.body
 
     }
