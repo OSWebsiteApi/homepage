@@ -13,8 +13,7 @@ const Login = () => {
             <Header />
             <main className={"index"}>
                 <div className="indexCenter">
-                    <Title1 title={"Login"} />
-                    <br/>
+                    <Title1 title={"Login"} /><br/>
                     <LoginFrom />
                 </div>
             </main>

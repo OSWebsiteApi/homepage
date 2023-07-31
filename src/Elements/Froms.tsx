@@ -21,33 +21,37 @@ export function LoginFrom() {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <label> E-mail:
-                <br />
-            <input
-                type="email"
-                name="Email"
-                value={inputs.Email}
-                onChange={handleChange}
-            />
-            </label>
-            <br/>
-            <label>Password:
-                <br />
-            <input
-                type="password"
-                name="Password"
-                value={inputs.Password}
-                onChange={handleChange}
-            />
-            </label>
-            <br/><br/>
-            <input type="submit" />
-        </form>
+            <div className="form">
+                <form onSubmit={handleSubmit}>
+                    <label> E-mail:
+                        <br />
+                    <input
+                        type="email"
+                        name="Email"
+                        value={inputs.Email}
+                        onChange={handleChange}
+                    />
+                    </label>
+                    <br/>
+                    <label>Password:
+                        <br />
+                    <input
+                        type="password"
+                        name="Password"
+                        value={inputs.Password}
+                        onChange={handleChange}
+                    />
+                    </label>
+                    <br/><br/>
+                    <input type="submit" />
+                    <br/>
+                </form>
+            </div>
         <div className="NotYetRegisterd">
             <p>Not yet registerd:</p>
             <a href="/Register">Register</a>
         </div>
+
         </>
     )
 }
@@ -74,47 +78,50 @@ export function RegisterForm() {
 
     return (
         <>
-        <form onSubmit={handleSubmit}>
-            <label>First name:
-            <input
-                type="text"
-                name="fname"
-                value={inputs.fname}
-                onChange={handleChange}
-            /></label><br/>
-            <label>Last name:
-            <input
-                type="text"
-                name="lname"
-                value={inputs.lname}
-                onChange={handleChange}
-            />
-            </label><br/>
-            <label>E-mail:
-            <input
-                type="email"
-                name="email"
-                value={inputs.email}
-                onChange={handleChange}
-            />
-            </label><br/>
-            <label>Password:
-            <input
-                type="password"
-                name="Password"
-                value={inputs.Password}
-                onChange={handleChange}
-            />
-            </label><br/>
-            <label>Retype Password:
-            <input
-                type="password"
-                name="RPassword"
-                value={inputs.RPassword}
-                onChange={handleChange}
-            /></label><br/>
-            <input type="submit"/>
-        </form>
+            <div className="form">
+                <form onSubmit={handleSubmit}>
+                    <label>First name:
+                    <input
+                        type="text"
+                        name="fname"
+                        value={inputs.fname}
+                        onChange={handleChange}
+                    /></label><br/>
+                    <label>Last name:
+                    <input
+                        type="text"
+                        name="lname"
+                        value={inputs.lname}
+                        onChange={handleChange}
+                    />
+                    </label><br/>
+                    <label>E-mail:
+                    <input
+                        type="email"
+                        name="email"
+                        value={inputs.email}
+                        onChange={handleChange}
+                    />
+                    </label><br/>
+                    <label>Password:
+                    <input
+                        type="password"
+                        name="Password"
+                        value={inputs.Password}
+                        onChange={handleChange}
+                    />
+                    </label><br/>
+                    <label>Retype Password:
+                    <input
+                        type="password"
+                        name="RPassword"
+                        value={inputs.RPassword}
+                        onChange={handleChange}
+                    /></label><br/>
+                    <input type="submit"/>
+                    <br/>
+                </form>
+            </div>
             <div className="AlreadyRegisterd">
                 <p>Already register:</p>
                 <a href="/Login">Login</a>

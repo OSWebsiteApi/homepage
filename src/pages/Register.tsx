@@ -13,8 +13,10 @@ const Register = () => {
         <>
             <Header />
                 <main className={"index"}>
-                    <Title1 title={"Register"} />
-                    <RegisterForm />
+                    <div className="indexCenter">
+                        <Title1 title={"Register"} /><br/>
+                        <RegisterForm />
+                    </div>
                 </main>
             <Footer />
         </>
