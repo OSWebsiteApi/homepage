@@ -63,14 +63,12 @@ body {
 .header-section > .header-section-total {
   background-color: var(--nav-color);
   height: inherit;
-  max-width: 1264px;
-  margin: auto;
+
 }
 
 .aboveNav {
   background-color: var(--background-color);
-  max-width: 1264px;
-  margin: auto;
+
 }
 
 .aboveNav > figure {
@@ -156,16 +154,14 @@ body {
 
 .header-section > .header-section-total > .header-section-right > .navigation > .topnav > li {
   list-style-type: none;
-  overflow: hidden;
-  margin: 0 5px;
   float: right;
   width: inherit;
-  border-radius: 10px;
 
 }
 
 .header-section > .header-section-total > .header-section-right > .navigation > .topnav > li > a {
   display: block;
+  border-radius: 10px;
   color: var(--text-color);
   text-align: center;
   padding: 14px 16px;
@@ -193,8 +189,7 @@ body {
 .index {
   display: grid;
   min-height: 60vh;
-  max-width: 1264px;
-  margin: auto;
+
 }
 
 .index > .indexCenter {
@@ -229,10 +224,18 @@ body {
   grid-column-end: 3;
 }
 
-.index > .indexCenter > .form {
-  margin: auto;
+.index > .indexCenter > .formcontainer {
+
+}
+
+.index > .indexCenter > .formcontainer > label {
   text-align: left;
-  align-content: center;
+  display: block;
+}
+
+.index > .indexCenter > .formcontainer > .inputleft {
+  float: right;
+
 }
 /* ------- end of main section ------- */
 
@@ -246,8 +249,7 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1264px;
-  margin: auto;
+
 }
 
 @media screen and (max-width: 1050px) {

@@ -1,6 +1,6 @@
 import React from "react";
 import {useState} from "react";
-import {apiPostRequest} from "../Comminucations/API";
+import {apiLoginPostRequest, apiRegisterPostRequest} from "../Comminucations/API";
 
 export function LoginFrom() {
     const [inputs, setInputs] = useState({
@@ -16,37 +16,32 @@ export function LoginFrom() {
 
     const handleSubmit  = (event:any) => {
         event.preventDefault();
-        apiPostRequest([inputs.Email, inputs.Password] ,"/login")
+        apiLoginPostRequest([inputs.Email, inputs.Password] ,"/login")
     }
 
     return (
         <>
-            <div className="form">
-                <form onSubmit={handleSubmit}>
-                    <label> E-mail:
-                        <br />
+                <form onSubmit={handleSubmit} className="formcontainer">
+                    <label> E-mail:</label>
                     <input
+                        className="inputleft"
                         type="email"
                         name="Email"
                         value={inputs.Email}
                         onChange={handleChange}
-                    />
-                    </label>
-                    <br/>
-                    <label>Password:
-                        <br />
+                    /><br/><br/>
+                    <label>Password:</label>
                     <input
+                        className="inputleft"
                         type="password"
                         name="Password"
                         value={inputs.Password}
                         onChange={handleChange}
-                    />
-                    </label>
-                    <br/><br/>
+                    /><br/><br/>
                     <input type="submit" />
-                    <br/>
+
                 </form>
-            </div>
+            <br/>
         <div className="NotYetRegisterd">
             <p>Not yet registerd:</p>
             <a href="/Register">Register</a>
@@ -73,55 +68,60 @@ export function RegisterForm() {
 
     const handleSubmit  = (event:any) => {
         event.preventDefault();
-        apiPostRequest([inputs.email, inputs.Password],"/register")
+
+            apiRegisterPostRequest([inputs.email, inputs.Password, inputs.fname, inputs.lname],"/register")
     }
 
     return (
         <>
-            <div className="form">
-                <form onSubmit={handleSubmit}>
-                    <label>First name:
+            <form onSubmit={handleSubmit} className="formcontainer">
+                    <label>First name:</label>
                     <input
+                        className="inputleft"
                         type="text"
                         name="fname"
                         value={inputs.fname}
                         onChange={handleChange}
-                    /></label><br/>
-                    <label>Last name:
+                    /><br/>
+                    <label>Last name:</label>
                     <input
+                        className="inputleft"
                         type="text"
                         name="lname"
                         value={inputs.lname}
                         onChange={handleChange}
                     />
-                    </label><br/>
-                    <label>E-mail:
+                    <br/>
+                    <label>E-mail:</label>
                     <input
+                        className="inputleft"
                         type="email"
                         name="email"
                         value={inputs.email}
                         onChange={handleChange}
                     />
-                    </label><br/>
-                    <label>Password:
+                    <br/>
+                    <label>Password:</label>
                     <input
+                        className="inputleft"
                         type="password"
                         name="Password"
                         value={inputs.Password}
                         onChange={handleChange}
                     />
-                    </label><br/>
-                    <label>Retype Password:
+                    <br/>
+                    <label>Retype Password:</label>
                     <input
+                        className="inputleft"
                         type="password"
                         name="RPassword"
                         value={inputs.RPassword}
                         onChange={handleChange}
-                    /></label><br/>
+                    />
+                    <br/><br/>
                     <input type="submit"/>
-                    <br/>
+                    <br/><br/>
                 </form>
-            </div>
             <div className="AlreadyRegisterd">
                 <p>Already register:</p>
                 <a href="/Login">Login</a>
