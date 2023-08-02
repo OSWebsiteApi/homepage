@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.1.1 beta",
+  "version": "0.1.2 beta",
   "description": "the api frontend.",
   "author": "Sebastiaan den Hertog <Sebastiaan@game-x.nl>",
   "dependencies": {
