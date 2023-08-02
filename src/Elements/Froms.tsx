@@ -24,27 +24,27 @@ export function LoginFrom() {
 
     return (
     <>
-            <form onSubmit={handleSubmit} className="formcontainer">
-                <label> E-mail:</label>
-                <input
-                    className="inputleft"
-                    type="email"
-                    name="email"
-                    pattern="^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$"
-                    value={inputs.email}
-                    onChange={handleChange}
-                /><br/><br/>
-                <label>Password:</label>
-                <input
-                    className="inputleft"
-                    type="password"
-                    name='password'
-                    value={inputs.password}
-                    onChange={handleChange}
-                /><br/><br/>
-                <input type="submit" />
+        <form onSubmit={handleSubmit} className="formcontainer">
+            <label> E-mail:</label>
+            <input
+                className="inputleft"
+                type="email"
+                name="email"
+                pattern="^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$"
+                value={inputs.email}
+                onChange={handleChange}
+            /><br/><br/>
+            <label>Password:</label>
+            <input
+                className="inputleft"
+                type="password"
+                name='password'
+                value={inputs.password}
+                onChange={handleChange}
+            /><br/><br/>
+            <input type="submit" />
 
-                </form>
+            </form>
             <br/>
         <div className="NotYetRegisterd">
             <p>Not yet registerd:</p>
