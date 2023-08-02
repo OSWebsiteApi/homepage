@@ -1,5 +1,5 @@
 import React from "react";
-import AboveNavigation from "./AboveNavigation";
+import AboveNavigation from "./AboveBanner";
 import TopNavigation from "./TopNavigation";
 
 const header = () => {

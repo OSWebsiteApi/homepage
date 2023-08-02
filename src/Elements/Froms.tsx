@@ -1,6 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import {apiLoginPostRequest, apiRegisterPostRequest} from "../Comminucations/API";
+import {Title1} from "../components/Titles";
 
 export function LoginFrom() {
     const [inputs, setInputs] = useState({
@@ -122,6 +123,26 @@ export function RegisterForm() {
                 <p>Already register:</p>
                 <a href="/Login">Login</a>
             </div>
+        </>
+    )
+}
+
+
+export function LogoutForm() {
+    const handleSubmit  = (event:any) => {
+        event.preventDefault();
+       sessionStorage.removeItem("token")
+    }
+
+    return (
+        <>
+            <form onSubmit={handleSubmit} className="formcontainer">
+                <br/>
+                <Title1 title="Are you sure" />
+                    <br/>
+                <input type="submit"/>
+                <br/><br/>
+            </form>
         </>
     )
 }
