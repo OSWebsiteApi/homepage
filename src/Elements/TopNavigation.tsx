@@ -19,7 +19,7 @@ const topNavigation = () => {
                 <div className="header-section-right">
                     <nav className="navigation">
                         <ul className={"topnav"}>
-                            <li className="right"><a href="/register">Register</a></li>
+                            <li className="right"><a href="/logout">logout</a></li>
                         </ul>
                         <Outlet />
                     </nav>

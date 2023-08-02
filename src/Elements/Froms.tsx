@@ -1,11 +1,12 @@
 import React from "react";
 import {useState} from "react";
 import {apiLoginPostRequest, apiRegisterPostRequest} from "../Comminucations/API";
+import {Title1} from "../components/Titles";
 
 export function LoginFrom() {
     const [inputs, setInputs] = useState({
-        Email: undefined,
-        Password: undefined
+        email: undefined,
+        password: undefined
     });
 
     const handleChange = (event:any) => {
@@ -16,31 +17,35 @@ export function LoginFrom() {
 
     const handleSubmit  = (event:any) => {
         event.preventDefault();
-        apiLoginPostRequest([inputs.Email, inputs.Password] ,"/login")
+        if (!apiLoginPostRequest(inputs ,"/login") ){
+            alert("Error, Try again")
+        }
+
     }
 
     return (
-        <>
-                <form onSubmit={handleSubmit} className="formcontainer">
-                    <label> E-mail:</label>
-                    <input
-                        className="inputleft"
-                        type="email"
-                        name="Email"
-                        value={inputs.Email}
-                        onChange={handleChange}
-                    /><br/><br/>
-                    <label>Password:</label>
-                    <input
-                        className="inputleft"
-                        type="password"
-                        name="Password"
-                        value={inputs.Password}
-                        onChange={handleChange}
-                    /><br/><br/>
-                    <input type="submit" />
+    <>
+        <form onSubmit={handleSubmit} className="formcontainer">
+            <label> E-mail:</label>
+            <input
+                className="inputleft"
+                type="email"
+                name="email"
+                pattern="^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$"
+                value={inputs.email}
+                onChange={handleChange}
+            /><br/><br/>
+            <label>Password:</label>
+            <input
+                className="inputleft"
+                type="password"
+                name='password'
+                value={inputs.password}
+                onChange={handleChange}
+            /><br/><br/>
+            <input type="submit" />
 
-                </form>
+            </form>
             <br/>
         <div className="NotYetRegisterd">
             <p>Not yet registerd:</p>
@@ -56,8 +61,7 @@ export function RegisterForm() {
         fname: undefined,
         lname: undefined,
         email: undefined,
-        Password: undefined,
-        RPassword: undefined,
+        password: undefined,
     });
 
     const handleChange = (event:any) => {
@@ -68,8 +72,9 @@ export function RegisterForm() {
 
     const handleSubmit  = (event:any) => {
         event.preventDefault();
-
-            apiRegisterPostRequest([inputs.email, inputs.Password, inputs.fname, inputs.lname],"/register")
+        if(!apiRegisterPostRequest(inputs,"/register")){
+            alert("Error, Try again")
+        }
     }
 
     return (
@@ -97,6 +102,7 @@ export function RegisterForm() {
                         className="inputleft"
                         type="email"
                         name="email"
+                        pattern="^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$"
                         value={inputs.email}
                         onChange={handleChange}
                     />
@@ -105,17 +111,8 @@ export function RegisterForm() {
                     <input
                         className="inputleft"
                         type="password"
-                        name="Password"
-                        value={inputs.Password}
-                        onChange={handleChange}
-                    />
-                    <br/>
-                    <label>Retype Password:</label>
-                    <input
-                        className="inputleft"
-                        type="password"
-                        name="RPassword"
-                        value={inputs.RPassword}
+                        name="password"
+                        value={inputs.password}
                         onChange={handleChange}
                     />
                     <br/><br/>
@@ -126,6 +123,26 @@ export function RegisterForm() {
                 <p>Already register:</p>
                 <a href="/Login">Login</a>
             </div>
+        </>
+    )
+}
+
+
+export function LogoutForm() {
+    const handleSubmit  = (event:any) => {
+        event.preventDefault();
+       sessionStorage.removeItem("token")
+    }
+
+    return (
+        <>
+            <form onSubmit={handleSubmit} className="formcontainer">
+                <br/>
+                <Title1 title="Are you sure" />
+                    <br/>
+                <input type="submit"/>
+                <br/><br/>
+            </form>
         </>
     )
 }
