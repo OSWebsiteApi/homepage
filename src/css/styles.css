@@ -51,10 +51,14 @@
 body {
   background: var(--background-color);
   font-family: Tahoma, sans-serif;
+
 }
 
-/* ------- section for above navigation ------- */
+/* ------- section for the header ------- */
+
 .header-section {
+  display: flex;
+  flex-wrap: wrap;
   background-color: var(--nav-color);
   height: 10vh;
 
@@ -63,12 +67,16 @@ body {
 .header-section > .header-section-total {
   background-color: var(--nav-color);
   height: inherit;
-
+  width: 1024px;
+  margin: auto;
 }
+
+/* ------- section for above navigation ------- */
 
 .aboveBanner {
   background-color: var(--background-color);
-
+  width: 1024px;
+  margin: auto;
 }
 
 .aboveBanner > figure {
@@ -97,11 +105,8 @@ body {
 
 .header-section > .header-section-total > .header-section-left {
   width: 19%;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  padding-left: 5px;
   float: left;
-  height: inherit;
+  height: 50%;
 }
 
 .header-section > .header-section-total > .header-section-left  > .left {
@@ -135,19 +140,16 @@ body {
 
 .header-section > .header-section-total > .header-section-right {
   width: 79%;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  margin-left: 18%;
-  height: inherit;
+  margin-left: 21%;
+  height: 50%;
+
 }
 
 .header-section > .header-section-total > .header-section-right > .navigation {
-  width: inherit;
   height: inherit;
 }
 
 .header-section > .header-section-total > .header-section-right > .navigation > .topnav{
-  width: inherit;
   height: inherit;
 
 }
@@ -164,9 +166,8 @@ body {
   border-radius: 10px;
   color: var(--text-color);
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 12px;
   text-decoration: none;
-  float: right;
   background-color: var(--background-color);
 }
 
@@ -185,10 +186,14 @@ body {
 }
 /* ------- end of navigation section ------- */
 
+/* ------- end of the header ------- */
+
 /* ------- section for main ------- */
 .index {
   display: flex;
   min-height: 60vh;
+  width: 1024px;
+  margin: auto;
 
 }
 .index > .left_nav_container {
@@ -294,13 +299,15 @@ body {
 footer {
   background-color: var(--footer-color);
   padding: 20px;
+
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
+  margin: auto;
+  width: 1024px;
 }
 
 @media screen and (max-width: 1050px) {
