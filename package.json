@@ -1,7 +1,7 @@
 {
-  "name": "frontend",
+  "name": "homepage",
   "version": "0.1.2 beta",
-  "description": "the api frontend.",
+  "description": "the homepage",
   "author": "Sebastiaan den Hertog <Sebastiaan@game-x.nl>",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
