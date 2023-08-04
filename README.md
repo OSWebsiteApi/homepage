@@ -37,7 +37,6 @@ The purpose of this project is to have a platform for businesses and projects. T
   ```
     npm i
     npm install serve
-    npm install serve
     npm run build
     serve -s build``` 
   
