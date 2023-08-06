@@ -1,7 +1,6 @@
 import React from "react";
 import {useState} from "react";
 import {apiLoginPostRequest, apiRegisterPostRequest} from "../Comminucations/API";
-import {Title1} from "../components/Titles";
 
 export function LoginFrom() {
     const [inputs, setInputs] = useState({
@@ -138,7 +137,7 @@ export function LogoutForm() {
         <>
             <form onSubmit={handleSubmit} className="formcontainer">
                 <br/>
-                <Title1 title="Are you sure" />
+                <p>Are you sure</p>
                     <br/>
                 <input type="submit"/>
                 <br/><br/>
