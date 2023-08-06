@@ -131,7 +131,7 @@ export function RegisterForm() {
 export function LogoutForm() {
     const handleSubmit  = (event:any) => {
         event.preventDefault();
-       sessionStorage.removeItem("token")
+       sessionStorage.removeItem("Api-Key")
     }
 
     return (
