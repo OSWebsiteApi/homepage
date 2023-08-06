@@ -30,7 +30,7 @@ export function LoginFrom() {
                 className="inputleft"
                 type="email"
                 name="email"
-                pattern="^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$"
+                placeholder="excemple@company.com"
                 value={inputs.email}
                 onChange={handleChange}
             /><br/><br/>
@@ -39,6 +39,7 @@ export function LoginFrom() {
                 className="inputleft"
                 type="password"
                 name='password'
+                placeholder="K1djfi/.Ion"
                 value={inputs.password}
                 onChange={handleChange}
             /><br/><br/>
@@ -84,6 +85,7 @@ export function RegisterForm() {
                         className="inputleft"
                         type="text"
                         name="fname"
+                        placeholder="Tomas"
                         value={inputs.fname}
                         onChange={handleChange}
                     /><br/>
@@ -92,6 +94,7 @@ export function RegisterForm() {
                         className="inputleft"
                         type="text"
                         name="lname"
+                        placeholder="Van Heijn"
                         value={inputs.lname}
                         onChange={handleChange}
                     />
@@ -101,7 +104,7 @@ export function RegisterForm() {
                         className="inputleft"
                         type="email"
                         name="email"
-                        pattern="^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$"
+                        placeholder="excemple@company.com"
                         value={inputs.email}
                         onChange={handleChange}
                     />
@@ -111,6 +114,7 @@ export function RegisterForm() {
                         className="inputleft"
                         type="password"
                         name="password"
+                        placeholder="K1djfi/.Ion"
                         value={inputs.password}
                         onChange={handleChange}
                     />
