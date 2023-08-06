@@ -11,6 +11,9 @@
 # production
 /build
 
+# config
+/src/config/config.yaml
+
 # misc
 .DS_Store
 .env
