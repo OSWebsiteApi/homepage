@@ -194,8 +194,12 @@ body {
   min-height: 60vh;
   width: 1024px;
   margin: auto;
-
 }
+
+input:invalid {
+  border: red solid 3px;
+}
+
 .index > .left_nav_container {
   float: left;
   width: 200px;
