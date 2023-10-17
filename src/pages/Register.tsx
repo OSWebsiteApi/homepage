@@ -7,7 +7,6 @@ import {Title1} from "../components/Titles";
 
 import '../css/styles.css';
 
-
 const Register = () => {
     return (
         <>

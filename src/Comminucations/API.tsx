@@ -40,7 +40,6 @@ export async function apiRegisterPostRequest(content: any, urlpath: string) {
         })
         const data = await response.json();
         sessionStorage.setItem("Api-Key",data.token)
-        sessionStorage.setItem("Api-Key",data.token)
         redirect(process.env.FRONTEND_URL || "https://stagingfrontend.game-x.nl")
     } catch (error) {
         console.error('Error:', error);
