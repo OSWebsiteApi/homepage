@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../Elements/Header";
-import {Footer} from "../../Elements/Footer";
+import Header from "../Elements/Header";
+import {Footer} from "../Elements/Footer";
 
-import {Title1} from "../../components/Titles";
+import {Title1} from "../components/Titles";
 
-import '../../css/styles.css';
+import '../css/styles.css';
 
 const Settings = () => {
     return (
