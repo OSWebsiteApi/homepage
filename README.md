@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# OpenSourceEcommerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A project for managing you businesses and projects.
 
-## Available Scripts
+## Test and Deploy
 
-In the project directory, you can run:
+### Not Required
+Create a .env file in the Frontend folder. This has to include the Port number. (Otherwise the default port is 3000) 
 
-### `npm start`
+```
+ Port=3000
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Name
+Open Source Ecommerce platform
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Description
+The purpose of this project is to have a platform for businesses and projects. They can change all the code themselves and add code to get more functionality. They can request a merge to give this functionality to all the other users.
 
-### `npm test`
+## Installation
+- Add or replace in Package.json ```"start": "react-scripts --openssl-legacy-provider start",```
+- Create .env in src/ add ```APIURL={The ip to the api.}``` 
+- Run for debug
+  - Run: ```npm i```  to install all packages
+  - npm run 
+- Copy and paste
+```
+    npm i
+    npm start
+```
+- Run for deployment
+     - Run: ```npm i```  to install all packages
+     - Run: ```npm install serve``` to install serves that runs the program
+     - Run: ```npm run build``` to make a build from the project
+     - Run: ```serve -s build``` to display the application
+- Copy and paste:
+  ```
+    npm i
+    npm install serve
+    npm run build
+    serve -s build``` 
+  
+## Usage
+Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The api is React, so we need these commands to run the application.
+- run the application
+    'npm start'
+    Runs the app in the development mode.\
+    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm run build`
+- run npm test
+    'npm test'
+    Launches the test runner in the interactive watch mode
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- File structure
+Todo:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Changelog
+For every update we make in the project we will add the Changelog. When we merge something make sure the Changelogs are correctly in order.
+The changelog needs to be formatted:
+dd-mm-jjjj - {what did you d0 add/update/remove can be more than one}: message/explanation.
+29-03-2023 - create: new project with all project file's and structure.
 
-### `npm run eject`
+## Support
+Questions can be sent to Sebastiaan@game-x.nl
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Roadmap
+To be concluded
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
+Everyone is welcome to contribute
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Authors and acknowledgment
+Thanks for contribution to this project:
+Sebastiaan (Yes, myself)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
+This project is licensed under: GNU AFFERO GENERAL PUBLIC LICENSE
 
-## Learn More
+## Project status
+In progress
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
