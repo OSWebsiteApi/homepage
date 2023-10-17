@@ -12,14 +12,14 @@ export default function Home() {
         <>
             <Header />
                 <main className={"index"}>
-                        <div className="index_Center">
-                            <div>
+                        <section className="index_Center">
+                            <section>
                                 <Title1 title={"HomePage"}/>
-                            </div>
-                            <div>
+                            </section>
+                            <section>
                                 <NewButton />
-                            </div>
-                        </div>
+                            </section>
+                        </section>
                 </main>
             <Footer />
         </>

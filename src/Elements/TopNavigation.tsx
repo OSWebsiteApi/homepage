@@ -5,18 +5,18 @@ import {Title1} from "../components/Titles";
 const topNavigation = () => {
     return (
         <>
-            <div className="header-section-total">
-                <div className="header-section-left">
-                    <div className="left">
+            <section className="header-section-total">
+                <section className="header-section-left">
+                    <section className="left">
                         <figure className="logoSmall">
                             <img src="/favicon.gif"/>
                         </figure>
-                    </div>
-                    <div className="right">
+                    </section>
+                    <section className="right">
                     <Title1 title={"The OpenSource Project"} />
-                    </div>
-                </div>
-                <div className="header-section-right">
+                    </section>
+                </section>
+                <section className="header-section-right">
                     <nav className="navigation">
                         <ul className={"topnav"}>
                             <li className="right">
@@ -25,8 +25,8 @@ const topNavigation = () => {
                         </ul>
                         <Outlet />
                     </nav>
-                </div>
-            </div>
+                </section>
+            </section>
         </>
     )
 };

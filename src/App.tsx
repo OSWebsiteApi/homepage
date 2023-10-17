@@ -7,12 +7,12 @@ import './css/styles.css';
 function App(): JSX.Element {
   return (
       <>
-          <div>
+          <section>
               <Menu />
               <hr />
               <App />
               <Footer />
-          </div>
+          </section>
       </>
   );
 }

@@ -12,10 +12,10 @@ const Logout = () => {
         <>
             <Header />
             <main className={"index"}>
-                <div className="indexCenter">
+                <section className="indexCenter">
                     <Title1 title={"Logout"} /><br/>
                     <LogoutForm />
-                </div>
+                </section>
             </main>
             <Footer />
         </>
