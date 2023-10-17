@@ -20,7 +20,7 @@ const topNavigation = () => {
                     <nav className="navigation">
                         <ul className={"topnav"}>
                             <li className="right">
-                                <a href="/Register/Register">register</a>
+                                <a href="/Register">register</a>
                             </li>
                         </ul>
                         <Outlet />
