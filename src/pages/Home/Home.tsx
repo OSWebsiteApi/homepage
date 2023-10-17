@@ -1,13 +1,27 @@
-import NewButton from "../../components/NewButton";
 import React from "react";
-import Layout from "../Layout/Layout";
+import Header from "../../Elements/Header";
+import {Footer} from "../../Elements/Footer";
+
+import {Title1} from "../../components/Titles";
+import NewButton from "../../components/NewButton";
+import '../../css/styles.css';
+
 
 export default function Home() {
     return (
-        <main>
-            <h1>Home</h1>
-            <Layout />
-            <NewButton />
-        </main>
+        <>
+            <Header />
+                <main className={"index"}>
+                        <div className="index_Center">
+                            <div>
+                                <Title1 title={"HomePage"}/>
+                            </div>
+                            <div>
+                                <NewButton />
+                            </div>
+                        </div>
+                </main>
+            <Footer />
+        </>
     )
 }

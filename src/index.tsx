@@ -6,12 +6,12 @@ import dotenv from 'dotenv';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //page routes
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Settings from './pages/Settings';
-import NoPage from './pages/noPage';
-import Register from "./pages/Register";
-import Logout from "./pages/Logout";
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import Settings from './pages/Settings/Settings';
+import NoPage from './pages/NoPage/noPage';
+import Register from "./pages/Register/Register";
+import Logout from "./pages/LogOut/Logout";
 
 
 dotenv.config();

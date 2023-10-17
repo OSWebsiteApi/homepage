@@ -1,14 +1,23 @@
 import React from "react";
+import Header from "../../Elements/Header";
+import {Footer} from "../../Elements/Footer";
 
-import Layout from "../Layout/Layout";
+import {Title1} from "../../components/Titles";
+
+import '../../css/styles.css';
 
 const Settings = () => {
-  return (
-    <main>
-      <h1>Settings</h1>
-      <Layout />
-    </main>
-  )
+    return (
+        <>
+            <Header />
+                <main className={"index"}>
+                    <div className="indexCenter">
+                        <Title1 title={"Settings"} />
+                    </div>
+                </main>
+            <Footer />
+        </>
+    )
 };
 
 export default Settings;
