@@ -12,10 +12,10 @@ const Login = () => {
         <>
             <Header />
             <main className={"index"}>
-                <div className="indexCenter">
+                <section className="indexCenter">
                     <Title1 title={"Login"} /><br/>
                     <LoginFrom />
-                </div>
+                </section>
             </main>
             <Footer />
         </>

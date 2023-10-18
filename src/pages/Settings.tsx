@@ -11,9 +11,9 @@ const Settings = () => {
         <>
             <Header />
                 <main className={"index"}>
-                    <div className="indexCenter">
+                    <section className="indexCenter">
                         <Title1 title={"Settings"} />
-                    </div>
+                    </section>
                 </main>
             <Footer />
         </>

@@ -51,7 +51,6 @@
 body {
   background: var(--background-color);
   font-family: Tahoma, sans-serif;
-
 }
 
 /* ------- section for the header ------- */
@@ -61,7 +60,6 @@ body {
   flex-wrap: wrap;
   background-color: var(--nav-color);
   height: 10vh;
-
 }
 
 .header-section > .header-section-total {
@@ -158,7 +156,6 @@ body {
   list-style-type: none;
   float: right;
   width: inherit;
-
 }
 
 .header-section > .header-section-total > .header-section-right > .navigation > .topnav > li > a {
@@ -420,3 +417,16 @@ footer > .footer-container > .footer-container-stack > .footer-container-bottom 
   padding: 10px;
 }
 /* ------- end of footer section ------- */
+
+
+/* ------- section for the Work in progress page ------- */
+
+body {
+  background-color: orange;
+}
+
+.wip_main {
+  position: absolute;
+  margin: auto;
+
+}

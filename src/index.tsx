@@ -12,6 +12,7 @@ import Settings from './pages/Settings';
 import NoPage from './pages/noPage';
 import Register from "./pages/Register";
 import Logout from "./pages/Logout";
+import WorkInProgress from "./pages/WorkInProgress";
 
 
 dotenv.config();
@@ -26,7 +27,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route>
-          <Route index element={<Home />} />
+          <Route index element={<WorkInProgress />} />
           <Route path="/login" element={<Login />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/register" element={<Register />} />

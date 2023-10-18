@@ -8,23 +8,23 @@ const leftNavigation: React.FC = () => {
     };
 
     return (
-        <div className="left_nav_container">
+        <section className="left_nav_container">
             {!isMenuOpen && (
-                <div className="open-menu-block" onClick={toggleMenu}>
+                <section className="open-menu-block" onClick={toggleMenu}>
                     &#9776; {/* Hamburger icon */}
-                </div>
+                </section>
             )}
             {isMenuOpen && (
-                <div className="menu">
+                <section className="menu">
                     <ul>
                         <li>Menu Item 1</li>
                         <li>Menu Item 2</li>
                         <li>Menu Item 3</li>
                     </ul>
                     <span className="close-icon" onClick={toggleMenu}>&times;</span>
-                </div>
+                </section>
             )}
-        </div>
+        </section>
     );
 };
 
