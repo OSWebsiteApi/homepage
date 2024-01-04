@@ -4,6 +4,10 @@ A project for managing you businesses and projects.
 
 ## Test and Deploy
 
+## Collaborate 
+
+- Join the team https://discord.gg/hhW4AdqmMa
+
 ### Not Required
 Create a .env file in the Frontend folder. This has to include the Port number. (Otherwise the default port is 3000) 
 
